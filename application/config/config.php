@@ -1,12 +1,84 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['js_includes'] = array(
-	'https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js',
-	APPPATH.'../assets/js/master.js'
+$config['spell_columns'] = array(
+'name' => 1,
+'spell_level' => 0,
+'school' => 1,
+'subschool' => 0,
+'short_description' => 1,
+'description_formated' => 0,
+
+'range' => 0,
+'area' => 0,
+'effect' => 0,
+'targets' => 0,
+'duration' => 0,
+'casting_time' => 0,
+'components' => 0,
+'saving_throw' => 0,
+'spell_resistence' => 0,
+'SLA_Level' => 0,
+'domain' => 0,
+'descriptor' => 0,
+
+'costly_components' => 0,
+'dismissible' => 0,
+'shapeable' => 0,
+'verbal' => 0,
+'somatic' => 0,
+'material' => 0,
+'focus' => 0,
+'divine_focus' => 0,
+
+'source' => 1,
 );
 
-$config['css_includes'] = array(
-	APPPATH.'../assets/css/master.css'
+$config['default_spell_sources'] = array(
+'PFRPG Core' => 1,
+'APG' => 1,
+
+'Ultimate Magic' => 0,
+'Ultimate Combat' => 0,
+
+'Faction Guide' => 0,
+'Rival Guide' => 0,
+'Pathfinder Society Field Guide' => 0,
+
+'Book of the Dammed V1' => 0,
+'Book of the Damned V2' => 0,
+
+'Cheliax Empire Of Devils' => 0,
+
+'Classic Treasures' => 0,
+
+'Dungeons Of Golarion' => 0,
+'DwarvesOfGolarion' => 0,
+'Gnomes' => 0,
+'Goblins Of Golarion' => 0,
+'Orcs of Golarion' => 0,
+
+'Andoran' => 0,
+'Sargava' => 0,
+
+'Inner Sea Magic' => 0,
+'Inner Sea World Guide' => 0,
+
+'Faiths Of Balance' => 0,
+'Faiths Of Corruption' => 0,
+'Faiths Of Purity' => 0,
+
+'AP 29' => 0,
+'AP 30' => 0,
+'AP 32' => 0,
+'AP 35' => 0,
+'AP 38' => 0,
+'AP 41' => 0,
+'AP 42' => 0,
+'AP 44' => 0,
+'AP 46' => 0,
+'AP 50' => 0,
+
+'Paizo Blog' => 0,
 );
 
 $config['title'] = 'Spell DB';
@@ -25,7 +97,7 @@ $config['title'] = 'Spell DB';
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://spell_db.local/';
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +109,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -235,7 +307,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '83HKLHkl30011kLlLlLlkhLLKgOIa2wHz';
 
 /*
 |--------------------------------------------------------------------------

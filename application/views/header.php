@@ -1,14 +1,11 @@
 <html>
 	<head>
-		<title><?php echo $this->config->item('title');?></title>
+		<title><?=$this->config->item('title');?></title>
 		
-		<?php foreach ($this->config->item('js_includes') as $js):?>
-			<script type="text/javascript" src="<?php echo $js;?>"></script>
-		<?php endforeach;?>
-		
-		<?php foreach ($this->config->item('css_includes') as $css):?>
-			<link rel="stylesheet" type="text/css" href="<?php echo $css;?>" />
-		<?php endforeach;?>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript" src="<?=$this->config->item('base_url');?>/assets/js/master.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="<?=$this->config->item('base_url');?>/assets/css/master.css" />
 	</head>
 	
 	<body>
