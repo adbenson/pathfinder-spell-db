@@ -63,25 +63,39 @@ class Spells extends CI_Model {
 	}
 	
 	public function get_spells($class_id, $level, $sources, $columns) {
+		if (empty($columns)) {
+			$columns = $this->get_default_columns();
+		}
 		
-		$this->db->select('levels.level, '.implode(',', $columns));
+		$source_key = array_search('spells.source', $columns);
+		if ($source_key !== false) {
+			$columns[$source_key] = 'sources.name AS source_name';
+			$this->db->join('sources', 'spells.source = sources.code');
+		}
+				
+		$this->db->select(implode(',', $columns));
+		
 		$this->db->from('spells');
 		
 		$this->db->join('levels', 'spells.id = levels.spell_id');
 		
 		if ($class_id != 'all') {
-			$this->db->where('levels.class_id', $class_id);	
+			$this->db->where('levels.class_id', $class_id);
 		}
+		
 		if ($level != 'all') {
 			$this->db->where('levels.level', $level);			
 		}
 		
-		if ($sources != 'all') {
-			//
+		if ($sources != 'all' && !empty($sources)) {
+			$where = implode("' OR spells.source = '", $sources);
+			$this->db->where("(spells.source = '".$where."')");
 		}
+		
 		$this->db->order_by('levels.level, spells.name', 'ASC');
+		
 		$query = $this->db->get();
-				
+						
 		return $query->result_array();
 		
 	}
@@ -106,12 +120,80 @@ class Spells extends CI_Model {
 	private function get_name_map($table) {
 		$this->db->select('code, name');
 		$this->db->from($table);
+		$this->db->order_by('order', 'ASC');
 
 		$query = $this->db->get();
 
 		$data = array();
 		foreach($query->result_array() as $row) {
 			$data[$row['code']] = $row['name'];
+		}
+		return $data;
+	}
+	
+	public function get_column_headings($columns) {
+		$names = $this->get_column_names();
+		
+		$headings = array();
+		foreach($columns as $column) {
+			if (array_key_exists($column, $names)) {
+				$headings[] = $names[$column];
+			}
+		}
+
+		return $headings;
+	}
+	
+	public function get_default_columns() {
+		return $this->get_defaults('columns');
+	}
+	
+	public function get_default_sources() {
+		return $this->get_defaults('sources');
+	}
+	
+	private function get_defaults($table) {
+		$this->db->select('code');
+		$this->db->from($table);
+		$this->db->where('default', 1);
+		
+		$query = $this->db->get();
+		
+		$data = array();
+		foreach($query->result_array() as $row) {
+			$data[] = $row['code'];
+		}
+		return $data;
+	}
+	
+	public function validate_columns($columns) {
+		return $this->validate('columns', $columns);
+	}
+	
+	public function validate_sources($sources) {
+		return $this->validate('sources', $sources);
+	}
+	
+	private function validate($table, $values) {
+		if (! is_array($values)) {
+			return array();
+		}
+		
+		$allowed = array_keys($this->get_name_map($table));
+		
+		return array_intersect($allowed, $values);
+	}
+	
+	public function get_boolean_columns() {
+		$this->db->select('code');
+		$this->db->from('columns');
+		$this->db->where('boolean', 1);
+		
+		$query = $this->db->get();
+		
+		$data = array();
+		foreach($query->result_array() as $row) {
+			$data[] = $row['code'];
 		}
 		return $data;
 	}

@@ -6,6 +6,7 @@ class Spell_db extends CI_Controller {
 		parent::__construct();
 		
 		$this->load->helper('form');
+		$this->load->helper('spell_db');
 		$this->load->library('session');
 		
 		if ($this->session->is_new()) {
@@ -19,8 +20,8 @@ class Spell_db extends CI_Controller {
 		$data['classes'] = array('all' => 'All Classes') + $this->spells->get_class_map();
 		$data['levels'] = array('all' => 'All Levels') + $this->spells->get_levels('all');
 		
-		$data['class_id'] = $this->session->userdata('class');
-		$data['level'] = $this->session->userdata('level');
+		$data['class_id'] = int_or_all($this->session->userdata('class'));
+		$data['level'] = int_or_all($this->session->userdata('level'));
 
 		$data['sources'] = $this->_map_to_name(
 			$this->session->userdata('sources'), 
@@ -37,26 +38,25 @@ class Spell_db extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
-	private function _map_to_name($enabled, $names) {		
-		$map = array();
+	private function _map_to_name($enabled, $names) {
+		if (! is_array($enabled)) {
+			$enabled = array();
+		}
 		
-		foreach($enabled as $field => $enabled) {
-			$map[$field] = array(
-				'enabled' => $enabled,
-				'name' => $names[$field]
+		foreach($names as $code => $name) {
+			$names[$code] = array(
+				'enabled' => in_array($code, $enabled)? 1 : 0,
+				'name' => $name
 			);
 		}
 		
-		return $map;	
+		return $names;	
 	}
 	
 	public function get_levels() {
-		$class_id = $this->input->post('class', true);
-		if (! is_numeric($class_id)) {
-			$class_id = 'all';
-		}
-		$this->session->set_userdata(array('class' => $class_id));
+		$class_id = int_or_all($this->input->post('class', true));
 		
+		$this->session->set_userdata(array('class' => $class_id));
 		$this->session->set_userdata(array('level' => 'all'));
 		
 		$levels = $this->spells->get_levels($class_id);
@@ -64,59 +64,64 @@ class Spell_db extends CI_Controller {
 		
 		echo json_encode($levels);		
 	}
-	
-	public function set_level() {
-		$level = $this->input->post('level', true);
-		if (! is_numeric($level)) {
-			$level = 'all';
+		
+	public function get_spells() {
+		$level = int_or_all($this->session->userdata('level'));		
+		$class_id = int_or_all($this->session->userdata('class'));
+		
+		$sources = $this->spells->validate_sources($this->session->userdata('sources'));
+
+		$columns = $this->spells->validate_columns($this->session->userdata('columns'));
+
+		$headings = $this->spells->get_column_headings($columns);
+		
+		foreach($columns as &$column) {
+			$column = 'spells.'.$column;
 		}
-		$this->session->set_userdata(array('level' => $level));
+			
+		if ($class_id !== 'all') {
+			array_unshift($columns, 'levels.level');
+			array_unshift($headings, 'Level');
+		}
+		
+		$spells = $this->spells->get_spells($class_id, $level, $sources, $columns);
+		echo $this->_build_table($spells, $headings);	
 	}
 	
-	public function get_spells() {
-		$level = $this->session->userdata('level');		
-		$class_id = $this->session->userdata('class');
-
-		$default_columns = $this->_column_names();
-		$selected_columns = $this->session->userdata('columns');
+	public function set_level() {
+		$level = int_or_all($this->input->post('level', true));
+		$this->session->set_userdata(array('level' => $level));
 		
-		$columns = array();
-		foreach($default_columns as $column) {
-			if (array_key_exists($column, $selected_columns) && $selected_columns[$column] == 1) {
-				$columns[] = $column;
-			}
-		}		
-		
-		$spells = $this->spells->get_spells($class_id, $level, 'all', $columns);
-		
-		echo $this->_build_table($spells);	
+		$this->get_spells();
 	}
 	
 	public function set_columns() {
-		$chosen_columns = $this->input->post(null, true);
-		
-		$columns = array();
-		foreach($this->_column_names() as $column) {
-			$columns[$column] = (array_key_exists($column, $chosen_columns))? 1 : 0;
+		$columns = $this->spells->validate_columns($this->input->post(null, true));
+
+		if (empty($columns)) {
+			$columns = $this->spells->get_default_columns();
 		}
 		
 		$this->session->set_userdata('columns', $columns);
+		
+		$this->get_spells();
 	}
 	
 	public function set_sources() {
-		$chosen_sources = $this->input->post(null, true);
+		$sources = $this->spells->validate_sources($this->input->post(null, true));
 		
-		$sources = array();
-		foreach($this->_source_names() as $source) {
-			$sources[$source] = (array_key_exists($source, $chosen_sources))? 1 : 0;
+		if (empty($sources)) {
+			$sources = $this->spells->get_default_sources();
 		}
 		
 		$this->session->set_userdata('sources', $sources);
+		
+		$this->get_spells();
 	}
 	
 	private function _init_user_data() {
-		$columns = $this->config->item('default_spell_columns');
-		$sources = $this->config->item('default_spell_sources');
+		$columns = $this->spells->get_default_columns();
+		$sources = $this->spells->get_default_sources();
 		
 		$this->session->set_userdata(array(
 			'class' => 'all',
@@ -126,22 +131,59 @@ class Spell_db extends CI_Controller {
 		));
 	}
 	
-	private function _build_table($spells) {
+	private function _build_table($spells, $headings) {
+		$thtml = "<table>\n<thead>\n<tr>";
 		
-		$this->load->library('table');
-		$this->table->set_heading(array_keys($spells[0]));
-		$table = $this->table->generate($spells);
+		foreach($headings as $heading) {
+			if ($heading == "Full Description") {
+				$heading = "<span class='toggle_desc closed'>".$heading."</span>";
+			}
+			$thtml .= "<th>".$heading."</th>\n";
+		}
 		
-		return $table; 
+		$thtml .= "</tr>\n</thead>\n<tbody>\n";
+		
+		$booleans = $this->spells->get_boolean_columns();
+		
+		foreach($spells as $spell) {
+			$thtml .= "<tr>\n";
+			
+			foreach($spell as $key => $value) {
+				if ($key === 'description_formated') {
+					$thtml .= "<td class='spell_desc_click closed'>&nbsp;</td>\n";
+				}
+				else {
+					$thtml .= "<td class='spell_".$key."'>";
+					
+					if (in_array($key, $booleans)) {
+						$thtml .= "<div class='";
+						$thtml .= ($value == 0)? "bool_yes" : "bool_no";
+						$thtml .= "'>&nbsp;</div>";
+					}
+					else {
+						$thtml .= $value;
+					}
+					
+					$thtml .= "</td>\n";
+				}
+			}
+			
+			$thtml .= "</tr>\n";
+			
+			if (array_key_exists('description_formated', $spell)) {
+				$thtml .= "<tr>\n";
+				$thtml .= "<td colspan='".count($spell)."'>\n";
+				$thtml .= "<div class='spell_decription'>";
+				$thtml .= $spell['description_formated'];
+				$thtml .= "</div></td>\n</tr>\n";
+			}
+		}
+		
+		$thtml .= "</tbody>\n</table>";
+		
+		return $thtml;
 	}
 	
-	private function _column_names() {
-		return array_keys($this->config->item('default_spell_columns'));
-	}
-	
-	private function _source_names() {
-		return array_keys($this->config->item('default_sources'));
-	}
 
 }
 
