@@ -54,6 +54,8 @@ class Spells extends CI_Model {
 		$this->db->order_by('level', 'ASC');
 		$query = $this->db->get();
 		
+//		echo $this->db->last_query();
+		
 		$levels = array();
 		foreach ($query->result() as $result) {
 			$levels[] = $result->level;			
@@ -77,7 +79,7 @@ class Spells extends CI_Model {
 		
 		$this->db->from('spells');
 		
-		$this->db->join('levels', 'spells.id = levels.spell_id');
+		$this->db->join('levels', 'spells.id = levels.spell_id', 'LEFT');
 		
 		if ($class_id != 'all') {
 			$this->db->where('levels.class_id', $class_id);
@@ -116,7 +118,7 @@ class Spells extends CI_Model {
 	public function get_source_names() {
 		return $this->get_name_map('sources');
 	}
-	
+		
 	private function get_name_map($table) {
 		$this->db->select('code, name');
 		$this->db->from($table);

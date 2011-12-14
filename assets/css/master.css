@@ -10,6 +10,25 @@ fieldset legend {
 	cursor: pointer;
 }
 
+.collapse {
+	background-image: url(../images/button_up.png);
+	background-repeat: no-repeat;
+	
+	-moz-transform: rotateX(0deg);
+	-webkit-transform: rotateX(0deg);
+	
+	-webkit-transition: -webkit-transform 0.5s ease;
+	
+	width: 16px;
+	height: 16px;
+}
+
+.collapse.closed {
+	-moz-transform: rotateX(180deg);
+	-webkit-transform: rotateX(180deg);
+	
+}
+
 fieldset.open legend {
 	background-image: url(../images/button_up.png);
 }

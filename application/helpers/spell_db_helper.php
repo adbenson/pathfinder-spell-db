@@ -8,3 +8,7 @@ function int_or_all($value) {
 		return 'all';
 	}
 }
+
+function collapse($closed) {
+	return "<div class='collapse". (($closed)? 'closed' : ''). "'></div>";
+}

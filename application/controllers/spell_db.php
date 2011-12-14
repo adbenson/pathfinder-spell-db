@@ -136,7 +136,7 @@ class Spell_db extends CI_Controller {
 		
 		foreach($headings as $heading) {
 			if ($heading == "Full Description") {
-				$heading = "<span class='toggle_desc closed'>".$heading."</span>";
+				$heading = "<div class='desc_all'><div class='collapse closed'></div>".$heading."</div>";
 			}
 			$thtml .= "<th>".$heading."</th>\n";
 		}
