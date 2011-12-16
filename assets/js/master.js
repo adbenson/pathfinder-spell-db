@@ -27,7 +27,7 @@ $(document).ready(function() {
 function handle_desc_click() {
 	var desc = $(this);
 	desc.toggleClass('closed');
-	desc.parent().next().find('.spell_decription').toggle();
+	desc.closest('tr').next().find('.description.full').toggleClass('closed');
 }
 
 function handle_submit(e) {
@@ -78,13 +78,14 @@ function send_update_request(url, data) {
 		  type: 'post',
 		  data: data? data : '',
 		  success: function(response) {
-				$('#spells').html(response);
+				
+			$('#spells').html(response);
 				
 				setSpinner(false);
 				
-				$('.spell_desc_click').click(handle_desc_click);
+				$('.description.button').click(handle_desc_click);
 				
-				$('.toggle_desc').click(desc_click_all);
+				$('.description.all').click(desc_click_all);
 			}
 	});
 }
@@ -93,10 +94,10 @@ function desc_click_all() {
 	obj = $(this);
 		
 	if (obj.hasClass('closed')) {
-		$('.spell_decription').show();
+		$('.description.full').removeClass('closed');
 	}
 	else {
-		$('.spell_decription').hide();
+		$('.description.full').addClass('closed');
 	}
 	
 	obj.toggleClass('closed');

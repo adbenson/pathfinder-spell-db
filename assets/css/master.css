@@ -4,49 +4,74 @@ table {
 	width: 100%;
 }
 
+.description.button,
+.description.all,
 fieldset legend {
-	padding-left: 1.25em;
-	background-repeat: no-repeat;
 	cursor: pointer;
 }
 
-.collapse {
-	background-image: url(../images/button_up.png);
-	background-repeat: no-repeat;
-	
-	-moz-transform: rotateX(0deg);
-	-webkit-transform: rotateX(0deg);
-	
-	-webkit-transition: -webkit-transform 0.5s ease;
-	
+.description.all {
+	white-space: nowrap;
+}
+
+.collapse img {
 	width: 16px;
 	height: 16px;
-}
-
-.collapse.closed {
-	-moz-transform: rotateX(180deg);
-	-webkit-transform: rotateX(180deg);
 	
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	
+	position: relative;
+	top: 0.15em;
 }
 
-fieldset.open legend {
-	background-image: url(../images/button_up.png);
+td .collapse img {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	top: 0;
 }
 
-fieldset.closed legend {
-	background-image: url(../images/button_down.png);
+.collapse img{
+	-webkit-transform: rotateX(0deg);
+	-webkit-transition: -webkit-transform 0.5s ease;
+}
+
+.closed .collapse img{
+	-webkit-transform: rotateX(180deg);
 }
 
 fieldset.open .content .options{
-	-moz-column-count:4; /* Firefox */
-	-webkit-column-count:4; /* Safari and Chrome */
-	column-count:4;
+	-moz-column-count:4 ;
+	-webkit-column-count: 4;
+	-o-column-count: 4;
+	column-count: 4;
 }
 
 
 #spells td {
 	border-top: thin black solid;
 	border-right: thin black dashed;
+}
+
+.description.full.closed {
+	display: none;
+}
+
+.description.full {
+}
+
+.bool.yes {
+	background-image: url(../images/checkmark.png);
+}
+
+.bool.no {
+	background-image: url(../images/cross.png);
+}
+
+.bool {
+	background-repeat: no-repeat;
+	background-position: center; 
 }
 
 .spinner {
@@ -62,59 +87,13 @@ fieldset.open .content .options{
 	white-space: nowrap;
 	overflow: hidden;
 	
-	-webkit-mask-image: url(../images/spinner.png);
-	background-color: #000;
+	background-image: url(../images/spinner.png);
 	
 	-webkit-animation-name: spinnerRotate;
 	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
 
-}
-
-.spell_decription {
-	display: none;
-	overflow: hidden;
-}
-
-td.spell_desc_click {
-	cursor: pointer;
-}
-
-td.spell_desc_click {
-	background-image: url(../images/button_up.png);
-	background-repeat:no-repeat;
-	background-position:center; 
-}
-
-td.spell_desc_click.closed {
-	background-image: url(../images/button_down.png);
-}
-
-.bool_yes {
-	background-image: url(../images/checkmark.png);
-	background-repeat: no-repeat;
-	background-position: center; 
-}
-
-.bool_no {
-	background-image: url(../images/cross.png);
-	background-repeat: no-repeat;
-	background-position: center; 
-}
-
-.toggle_desc {
-	background-image: url(../images/button_up.png);
-	background-repeat: no-repeat;
-	background-position: left; 
-	
-	width: 1em;
-	padding-left: 1.5em;
-	cursor: pointer;
-}
-
-.toggle_desc.closed {
-	background-image: url(../images/button_down.png);
 }
 
 @-webkit-keyframes spinnerRotate {

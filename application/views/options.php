@@ -1,7 +1,7 @@
 
     <?=form_open('spell_db/set_'.$option, array('id' => 'set_'.$option))?>
     
-    	<?=form_fieldset(collapse(true).$option_name, array('id' => $option, 'class' => 'closed'))?>
+    	<?=form_fieldset(collapse().$option_name, array('id' => $option, 'class' => 'closed'))?>
     	
     		<div class="content">
     			<div class="options">

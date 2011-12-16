@@ -9,6 +9,10 @@ function int_or_all($value) {
 	}
 }
 
-function collapse($closed) {
-	return "<div class='collapse". (($closed)? 'closed' : ''). "'></div>";
+function collapse() {
+	$div = "<span class='collapse'>";
+	$div .= "<img src='assets/images/button_up.png'>";
+	$div .= "</span>";
+	
+	return $div;
 }

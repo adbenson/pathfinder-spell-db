@@ -79,14 +79,17 @@ class Spells extends CI_Model {
 		
 		$this->db->from('spells');
 		
-		$this->db->join('levels', 'spells.id = levels.spell_id', 'LEFT');
-		
 		if ($class_id != 'all') {
 			$this->db->where('levels.class_id', $class_id);
 		}
 		
 		if ($level != 'all') {
-			$this->db->where('levels.level', $level);			
+			$this->db->where('levels.level', $level);	
+		}
+		
+		if ($level != 'all' || $class_id != 'all') {
+			$this->db->join('levels', 'spells.id = levels.spell_id', 'left');
+			$this->db->order_by('levels.level', 'ASC');	
 		}
 		
 		if ($sources != 'all' && !empty($sources)) {
@@ -94,9 +97,11 @@ class Spells extends CI_Model {
 			$this->db->where("(spells.source = '".$where."')");
 		}
 		
-		$this->db->order_by('levels.level, spells.name', 'ASC');
+		$this->db->order_by('spells.name', 'ASC');
 		
 		$query = $this->db->get();
+		
+//echo $this->db->last_query();die;
 						
 		return $query->result_array();
 		

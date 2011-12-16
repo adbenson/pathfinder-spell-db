@@ -1,5 +1,5 @@
 
-<?=form_fieldset(collapse(false).'Spell Selection', array('id' => 'selection', 'class' => 'open'))?>
+<?=form_fieldset(collapse().'Spell Selection', array('id' => 'selection'))?>
 	<div class="content">
 	
 		<?=form_open('get_spells', array('id' => 'class_level'))?>
