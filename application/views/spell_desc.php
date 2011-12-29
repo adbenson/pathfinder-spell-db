@@ -1,18 +1,4 @@
 <table>
-	<thead>
-		<tr>
-			<?php foreach ($headings as $heading): ?>
-				<th>
-					<?php
-						if ($heading == "Full Description") {
-							$heading = "<div class='description all closed'>".collapse().$heading."</div>";
-						}
-						echo $heading
-					?>
-				</th>
-			<?php endforeach; ?>
-		</tr>
-	</thead>
 	<tbody>
 		<?php foreach ($spells as $spell): ?>
 			<tr data-spell_id="<?=$spell['id']?>">

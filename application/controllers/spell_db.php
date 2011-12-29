@@ -34,7 +34,7 @@ class Spell_db extends CI_Controller {
 		);
 
 		$this->load->view('header');
-		$this->load->view('spell_list', $data);				
+		$this->load->view('spells', $data);				
 		$this->load->view('footer');
 	}
 	
@@ -85,7 +85,14 @@ class Spell_db extends CI_Controller {
 		}
 		
 		$spells = $this->spells->get_spells($class_id, $level, $sources, $columns);
-		echo $this->_build_table($spells, $headings);	
+		
+		$data = array(
+			'spells' => $spells,
+			'headings' => $headings,
+			'booleans' => $this->spells->get_boolean_columns()
+		);
+		
+		$this->load->view('spell_list', $data);	
 	}
 	
 	public function set_level() {
@@ -119,6 +126,14 @@ class Spell_db extends CI_Controller {
 		$this->get_spells();
 	}
 	
+	public function get_spell() {
+		$spell_id = int_or_all($this->input->post('spell_id', true));
+		
+		$spell_data = $this->spells->get_spell($spell_id);
+		
+		$this->load->view('spell_desc');
+	}
+	
 	private function _init_user_data() {
 		$columns = $this->spells->get_default_columns();
 		$sources = $this->spells->get_default_sources();
@@ -148,9 +163,12 @@ class Spell_db extends CI_Controller {
 		$booleans = $this->spells->get_boolean_columns();
 		
 		foreach($spells as $spell) {
-			$thtml[] = "<tr>\n";
+			$thtml[] = "<tr data-spell_id=\"".$spell['id']."\">\n";
 			
 			foreach($spell as $key => $value) {
+				if ($key === 'id') {
+					continue;
+				}
 				if ($key === 'description_formated') {
 					$thtml[] = "<td class='description button closed'>".collapse()."</td>\n";
 				}

@@ -69,6 +69,8 @@ class Spells extends CI_Model {
 			$columns = $this->get_default_columns();
 		}
 		
+		array_unshift($columns, 'spells.id');
+		
 		$source_key = array_search('spells.source', $columns);
 		if ($source_key !== false) {
 			$columns[$source_key] = 'sources.name AS source_name';
@@ -105,6 +107,18 @@ class Spells extends CI_Model {
 						
 		return $query->result_array();
 		
+	}
+	
+	public function get_spell($spell_id) {
+		$columns = $this->get_column_names();
+		
+		$this->db->select(array_keys($columns));
+		$this->db->from('spells');
+		$this->db->where('id', $spell_id);
+		
+		$query = $this->db->get();
+		
+		return $query->result_array();
 	}
 	
 	public function is_class($class_id) {
