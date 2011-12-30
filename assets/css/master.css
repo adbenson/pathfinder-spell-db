@@ -1,15 +1,23 @@
 @CHARSET "ISO-8859-1";
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica);
 
 body {
-	font-family: sans-serif;	
+	font-family: 'IM Fell DW Pica', serif;
 }
 
 #spells {
 	width: 100%;
+	border-spacing: 0;
 }
 
+#spells tr,
 #spells td {
-	min-height: 16px;	
+	height: 0;
+}
+
+#spells .spell_data_row td{
+	height: 20px;
+	padding: 0.25em;
 }
 
 .description.button,
@@ -68,6 +76,9 @@ fieldset.open .content .options{
 
 .description.full {
 	margin: 0.5em;
+	padding: 0.5em;
+	border: medium brown solid;
+	background-image: url(../images/parchment.png);
 }
 
 .bool.yes {

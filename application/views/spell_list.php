@@ -16,7 +16,7 @@
 	</thead>
 	<tbody>
 		<?php foreach ($spells as $spell): ?>
-			<tr data-spell_id="<?=$spell['id']?>">
+			<tr class="spell_data_row" data-spell_id="<?=$spell['id']?>">
 				<?php foreach ($spell as $key => $value): ?>
 				
 					<?php if($key === 'id') continue; ?>
