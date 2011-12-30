@@ -110,15 +110,36 @@ class Spells extends CI_Model {
 	}
 	
 	public function get_spell($spell_id) {
-		$columns = $this->get_column_names();
+		$booleans = $this->get_boolean_columns();
+						
+		$columns = array_keys($booleans);
+		$columns[] = 'full_text';
 		
-		$this->db->select(array_keys($columns));
+		$this->db->select($columns);
 		$this->db->from('spells');
-		$this->db->where('id', $spell_id);
+		if ($spell_id != 'all') {
+			$this->db->where('id', $spell_id);
+		}
 		
 		$query = $this->db->get();
+//echo $this->db->last_query();die;		
+//					var_dump($query->result_array());die;
 		
-		return $query->result_array();
+		if ($query->num_rows > 0) {
+			$result = array_shift($query->result_array());
+			
+			$spell_bools = array();
+			foreach($booleans as $code => $name) {
+				if($result[$code]) {
+					$spell_bools[] = $name;
+				} 
+			}
+						
+			return array(
+				'booleans' => $spell_bools,
+				'full_text' => $result['full_text']
+			);
+		}
 	}
 	
 	public function is_class($class_id) {
@@ -206,7 +227,7 @@ class Spells extends CI_Model {
 	}
 	
 	public function get_boolean_columns() {
-		$this->db->select('code');
+		$this->db->select('code, name');
 		$this->db->from('columns');
 		$this->db->where('boolean', 1);
 		
@@ -214,7 +235,7 @@ class Spells extends CI_Model {
 		
 		$data = array();
 		foreach($query->result_array() as $row) {
-			$data[] = $row['code'];
+			$data[$row['code']] = $row['name'];
 		}
 		return $data;
 	}

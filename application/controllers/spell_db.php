@@ -89,7 +89,7 @@ class Spell_db extends CI_Controller {
 		$data = array(
 			'spells' => $spells,
 			'headings' => $headings,
-			'booleans' => $this->spells->get_boolean_columns()
+			'booleans' => array_keys($this->spells->get_boolean_columns())
 		);
 		
 		$this->load->view('spell_list', $data);	
@@ -127,11 +127,11 @@ class Spell_db extends CI_Controller {
 	}
 	
 	public function get_spell() {
-		$spell_id = int_or_all($this->input->post('spell_id', true));
+		$spell_id = int_or_all($this->input->get('spell_id', true));
 		
 		$spell_data = $this->spells->get_spell($spell_id);
 		
-		$this->load->view('spell_desc');
+		$this->load->view('spell_desc', $spell_data);
 	}
 	
 	private function _init_user_data() {
@@ -145,63 +145,6 @@ class Spell_db extends CI_Controller {
 			'sources' => $sources
 		));
 	}
-	
-	private function _build_table($spells, $headings) {
-		$thtml = array();
-		
-		$thtml[] = "<table>\n<thead>\n<tr>";
-		
-		foreach($headings as $heading) {
-			if ($heading == "Full Description") {
-				$heading = "<div class='description all closed'>".collapse().$heading."</div>";
-			}
-			$thtml[] = "<th>".$heading."</th>\n";
-		}
-		
-		$thtml[] = "</tr>\n</thead>\n<tbody>\n";
-		
-		$booleans = $this->spells->get_boolean_columns();
-		
-		foreach($spells as $spell) {
-			$thtml[] = "<tr data-spell_id=\"".$spell['id']."\">\n";
-			
-			foreach($spell as $key => $value) {
-				if ($key === 'id') {
-					continue;
-				}
-				if ($key === 'description_formated') {
-					$thtml[] = "<td class='description button closed'>".collapse()."</td>\n";
-				}
-				else {
-					$thtml[] = "<td class='spell_".$key."'>";
-					
-					if (in_array($key, $booleans)) {
-						$thtml[] = "<div class='bool ".($value == 0)? "yes" : "no"."'>&nbsp;</div>";
-					}
-					else {
-						$thtml[] = $value;
-					}
-					
-					$thtml[] = "</td>\n";
-				}
-			}
-			
-			$thtml[] = "</tr>\n";
-			
-			if (array_key_exists('description_formated', $spell)) {
-				$thtml[] = "<tr>\n";
-				$thtml[] = "<td colspan='".count($spell)."'>\n";
-				$thtml[] = "<div class='description full closed'>";
-				$thtml[] = $spell['description_formated'];
-				$thtml[] = "</div></td>\n</tr>\n";
-			}
-		}
-		
-		$thtml[] = "</tbody>\n</table>";
-		
-		return implode($thtml);
-	}
-	
 
 }
 
