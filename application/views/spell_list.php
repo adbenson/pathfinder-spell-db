@@ -41,7 +41,7 @@
 			<tr>
 				<td colspan="<?=count($spell)?>">
 					<div class="description full closed">
-						&nbsp;
+						Loading...
 					</div>
 				</td>
 			</tr>
