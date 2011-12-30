@@ -127,7 +127,7 @@ class Spell_db extends CI_Controller {
 	}
 	
 	public function get_spell() {
-		$spell_id = int_or_all($this->input->get('spell_id', true));
+		$spell_id = int_or_all($this->input->post('spell_id', true));
 		
 		$spell_data = $this->spells->get_spell($spell_id);
 		

@@ -11,7 +11,7 @@
 	    <?=form_close()?>
 	    
 	    <?=$this->load->view('options', array(
-	    	'option'=>'source', 'option_name'=>'Source Texts', 'option_set'=>$sources
+	    	'option'=>'sources', 'option_name'=>'Source Texts', 'option_set'=>$sources
 	    ))?>
 	    
 	    <?=$this->load->view('options', array(

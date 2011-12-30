@@ -3,14 +3,15 @@
 		<tr>
 			<?php foreach ($headings as $heading): ?>
 				<th>
-					<?php
-						if ($heading == "Full Description") {
-							$heading = "<div class='description all closed'>".collapse().$heading."</div>";
-						}
-						echo $heading
-					?>
+					<?=$heading?>
 				</th>
 			<?php endforeach; ?>
+			<th>
+				<div class='description all closed'>
+					<?=collapse()?>
+					Full Spell
+				</div>
+			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -20,36 +21,30 @@
 				
 					<?php if($key === 'id') continue; ?>
 					
-					<?php if ($key === 'description_formated'): ?>
-						<td class='description button closed'>
-							<?=collapse()?>
-						</td>
-					<?php else: ?>
-						<td class="spell_<?=$key?>">
+					<td class="spell_<?=$key?>">
+					
+						<?php if (in_array($key, $booleans)) {
+								$class = ($value == 0)? "bool no" : "bool yes";
+								$value = "<div class='".$class."'>&nbsp;</div>";
+						} ?>
 						
-						<?php
-							if (in_array($key, $booleans)) {
-								echo "<div class='bool ".($value == 0)? "yes" : "no"."'>&nbsp;</div>";
-							}
-							else {
-								echo $value;
-							}
-						?>
-						
-						</td>
-					<?php endif; ?>
+						<?=$value?>
+					
+					</td>
 				<?php endforeach; ?>
+				
+				<td class='description button closed'>
+					<?=collapse()?>
+				</td>
 			</tr>
 			
-			<?php if (array_key_exists('description_formated', $spell)): ?>
-				<tr>
-					<td colspan="<?=count($spell)?>">
-						<div class="description full closed">
-							<?=$spell['description_formated']?>
-						</div>
-					</td>
-				</tr>
-			<?php endif; ?>
+			<tr>
+				<td colspan="<?=count($spell)?>">
+					<div class="description full closed">
+						&nbsp;
+					</div>
+				</td>
+			</tr>
 			
 		<?php endforeach; ?>
 	</tbody>

@@ -1,7 +1,15 @@
 @CHARSET "ISO-8859-1";
 
-table {
+body {
+	font-family: sans-serif;	
+}
+
+#spells {
 	width: 100%;
+}
+
+#spells td {
+	min-height: 16px;	
 }
 
 .description.button,
@@ -59,6 +67,7 @@ fieldset.open .content .options{
 }
 
 .description.full {
+	margin: 0.5em;
 }
 
 .bool.yes {
@@ -94,6 +103,22 @@ fieldset.open .content .options{
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
 
+}
+
+.spell_attrib {
+	margin: 1em;	
+}
+
+.spell_attrib div {
+	background-repeat: no-repeat;
+	background-position: left;
+	background-image: url(../images/checkmark.png);	
+	
+	padding-left: 1.5em;
+}
+
+strong{
+	font-weight: bold;
 }
 
 @-webkit-keyframes spinnerRotate {

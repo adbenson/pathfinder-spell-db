@@ -117,13 +117,10 @@ class Spells extends CI_Model {
 		
 		$this->db->select($columns);
 		$this->db->from('spells');
-		if ($spell_id != 'all') {
-			$this->db->where('id', $spell_id);
-		}
+		$this->db->where('id', $spell_id);
 		
 		$query = $this->db->get();
 //echo $this->db->last_query();die;		
-//					var_dump($query->result_array());die;
 		
 		if ($query->num_rows > 0) {
 			$result = array_shift($query->result_array());

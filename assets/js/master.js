@@ -27,7 +27,25 @@ $(document).ready(function() {
 function handle_desc_click() {
 	var desc = $(this);
 	desc.toggleClass('closed');
-	desc.closest('tr').next().find('.description.full').toggleClass('closed');
+	
+	var row = desc.closest('tr');
+	var id = row.attr('data-spell_id');
+
+	var full_desc = row.next().find('.description.full')
+	full_desc.toggleClass('closed');
+	
+	if (! full_desc.hasClass('loaded')) {
+		$.ajax({
+			url: 'spell_db/get_spell',
+			dataType: 'html',
+			type: 'post',
+			data: 'spell_id='+id,
+			success: function(response) {
+				full_desc.html(response);
+				full_desc.addClass('loaded');
+			}
+		});
+	}
 }
 
 function handle_submit(e) {
