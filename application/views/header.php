@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="<?=$this->config->item('base_url');?>/assets/js/master.js"></script>
 				
 		<link rel="stylesheet" type="text/css" href="<?=$this->config->item('base_url');?>/assets/css/master.css" />
+		<link rel="stylesheet" type="text/css" href="<?=$this->config->item('base_url');?>/assets/css/PF.css" />
 	</head>
 	
 	<body>
