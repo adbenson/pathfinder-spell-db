@@ -16,6 +16,10 @@
 	    
 	    <?=$this->load->view('options', array(
 	    	'option'=>'columns', 'option_name'=>'Columns', 'option_set'=>$columns
+	    ))?> 
+	    
+	    <?=$this->load->view('options', array(
+	    	'option'=>'attributes', 'option_name'=>'Spell Attributes', 'option_set'=>$attribs
 	    ))?>  
 	    
 	</div>

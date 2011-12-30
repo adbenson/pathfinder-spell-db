@@ -32,7 +32,12 @@ class Spell_db extends CI_Controller {
 			$this->session->userdata('columns'),
 			$this->spells->get_column_names()
 		);
-
+		
+		$data['attribs'] = $this->_map_to_name(
+			$this->session->userdata('attribs'),
+			$this->spells->get_boolean_columns()
+		);
+		
 		$this->load->view('header');
 		$this->load->view('spells', $data);				
 		$this->load->view('footer');
@@ -137,12 +142,14 @@ class Spell_db extends CI_Controller {
 	private function _init_user_data() {
 		$columns = $this->spells->get_default_columns();
 		$sources = $this->spells->get_default_sources();
+		$attribs = array();
 		
 		$this->session->set_userdata(array(
 			'class' => 'all',
 			'level' => 'all',
 			'columns' => $columns,
-			'sources' => $sources
+			'sources' => $sources,
+			'attribs' => $attribs
 		));
 	}
 
