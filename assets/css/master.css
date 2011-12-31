@@ -13,7 +13,13 @@ body {
 }
 
 legend {
-	font-size: 1.25em;	
+	font-size: 1.25em;
+	border-width: 5px 4px 3px;
+	-moz-border-image: url(http://spell_db.local/assets/images/simpleframe_wh_sm.png) 5 4 3 stretch;
+	-webkit-border-image: url(http://spell_db.local/assets/images/simpleframe_wh_sm.png) 5 4 3 stretch;
+	-o-border-image: url(http://spell_db.local/assets/images/simpleframe_wh_sm.png) 5 4 3 stretch;
+	border-image: url(http://spell_db.local/assets/images/simpleframe_wh_sm.png) 5 4 3 stretch;
+ 
 }
 
 #selection fieldset {
@@ -81,11 +87,11 @@ fieldset.open .content .options{
 
 #spells td.description.row,
 #spells .header_border	 {
-border-width: 0px 0px 31px;
--moz-border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
--webkit-border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
--o-border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
-border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
+	border-width: 0px 0px 31px;
+	-moz-border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
+	-webkit-border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
+	-o-border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
+	border-image: url(http://spell_db.local//assets/images/hrule_lg.png) 46 0 stretch round;
 }
 
 .description.full.closed {
