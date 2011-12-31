@@ -13,6 +13,9 @@
 				</div>
 			</th>
 		</tr>
+		<tr>
+			<td class="header_border" colspan="<?=count($spells[0])?>">
+		</tr>
 	</thead>
 	<tbody>
 		<?php foreach ($spells as $spell): ?>
@@ -39,7 +42,7 @@
 			</tr>
 			
 			<tr>
-				<td colspan="<?=count($spell)?>">
+				<td class="description row" colspan="<?=count($spell)?>">
 					<div class="description full closed">
 						Loading...
 					</div>

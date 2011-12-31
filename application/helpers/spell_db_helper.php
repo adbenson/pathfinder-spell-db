@@ -11,7 +11,7 @@ function int_or_all($value) {
 
 function collapse() {
 	$div = "<span class='collapse'>";
-	$div .= "<img src='assets/images/button_up.png'>";
+	$div .= "<img src='assets/images/triangle_knot.png'>";
 	$div .= "</span>";
 	
 	return $div;
