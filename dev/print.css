@@ -1,0 +1,981 @@
+@font-face {
+    font-family: 'Museo300';
+    src: url('font-face/museo300-regular-webfont.eot');
+    src: url('font-face/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo300-regular-webfont.woff') format('woff'),
+         url('font-face/museo300-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo300-regular-webfont.svg#Museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo700';
+    src: url('font-face/museo700-regular-webfont.eot');
+    src: url('font-face/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo700-regular-webfont.woff') format('woff'),
+         url('font-face/museo700-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo700-regular-webfont.svg#Museo700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo500';
+    src: url('font-face/museo500-regular-webfont.eot');
+    src: url('font-face/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo500-regular-webfont.woff') format('woff'),
+         url('font-face/museo500-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo500-regular-webfont.svg#Museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo900';
+    src: url('font-face/museo900-regular-webfont.eot');
+    src: url('font-face/museo900-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo900-regular-webfont.woff') format('woff'),
+         url('font-face/museo900-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo900-regular-webfont.svg#Museo900') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FuturaStdBold';
+    src: url('font-face/futurastd-bold-webfont.eot');
+    src: url('font-face/futurastd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/futurastd-bold-webfont.woff') format('woff'),
+         url('font-face/futurastd-bold-webfont.ttf') format('truetype'),
+         url('font-face/futurastd-bold-webfont.svg#FuturaStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MuseoSans900Italic';
+    src: url('font-face/museosans-900italic-webfont.eot');
+    src: url('font-face/museosans-900italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museosans-900italic-webfont.woff') format('woff'),
+         url('font-face/museosans-900italic-webfont.ttf') format('truetype'),
+         url('font-face/museosans-900italic-webfont.svg#MuseoSans900Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo700Italic';
+    src: url('font-face/museo700-italic-webfont.eot');
+    src: url('font-face/museo700-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo700-italic-webfont.woff') format('woff'),
+         url('font-face/museo700-italic-webfont.ttf') format('truetype'),
+         url('font-face/museo700-italic-webfont.svg#Museo700Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MuseoSans500Italic';
+    src: url('font-face/museosans_500_italic-webfont.eot');
+    src: url('font-face/museosans_500_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museosans_500_italic-webfont.woff') format('woff'),
+         url('font-face/museosans_500_italic-webfont.ttf') format('truetype'),
+         url('font-face/museosans_500_italic-webfont.svg#MuseoSans500Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h4 { font-family: 'Museo500', sans-serif; font-size: 1.167em; color: #000000; font-weight: bold;  }
+
+/*Page*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+input, textarea, select {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+
+a {
+	color: #2A89CA;
+	text-decoration: none;
+}
+
+.print.hidden {
+	display: block;
+	font-size: 2em;
+	font-weight: bold;
+	color: #003F76;
+	font-family: 'Museo700',sans-serif;
+}
+
+body {
+	color: #666666;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 0.75em;
+	line-height: 1.2;
+}
+
+#bg {
+}
+
+#wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#header {
+	height: 142px;
+	display: none;
+}
+
+.logo {
+	height: 112px;
+	width: 196px;
+	float: left;
+	padding: 30px 25px 0 34px;
+}
+
+.logo a {
+	background: url(/assets/images/en-us/bestbuy/logo.png) no-repeat;
+	height: 112px;
+	width: 196px;
+	display: block;
+	text-indent: -4000px;
+}
+
+.common_bar {
+	background-image: url(/assets/images/en-us/bestbuy/topheaderbg.jpg);
+	height: 35px;
+}
+
+
+
+#header .hdr_rgt {
+	float: right;
+}
+
+#navmenu {
+	width: 960px;
+	padding: 0 10px;
+}
+
+#navmenu .menu_lft {
+	background-image: url(/assets/images/en-us/bestbuy/menu_lft_bg.png);
+	height: 31px;
+	width: 10px;
+	float: left;
+}
+
+#navmenu .menu_ctr {
+	background-image: url(/assets/images/en-us/bestbuy/menu_mid_bg.png);
+	height: 31px;
+	width: 940px;
+	float: left;
+}
+
+#navmenu .menu_ctr ul {
+	display: inline;
+	float: left;
+	list-style-type: none;
+	margin-top: 7px;
+}
+
+#navmenu .menu_ctr ul  li {
+	background: url(/assets/images/en-us/bestbuy/menu_link_separater.png) no-repeat right center;
+	float: left;
+}
+
+#navmenu .menu_ctr ul  li a {
+	color: #FFFFFF;
+	font-size: 1.083em;
+	font-weight: bold;
+	padding: 0 25px;
+	text-transform: uppercase;
+}
+#navmenu .menu_ctr ul  li a:hover{
+	text-decoration: underline;
+}
+
+#navmenu .menu_rgt {
+	background-image: url(/assets/images/en-us/bestbuy/menu_rgt_bg.png);
+	height: 31px;
+	width: 10px;
+	float: right;
+}
+
+#content {
+	padding: 0 0 40px;
+	position: relative;
+}
+
+.breadcrumb {
+	margin: 18px 0 0 44px;
+	display: none;
+}
+
+.breadcrumb a.home {
+	color: #004C86;
+}
+
+#sidebar {
+	float: right;
+	width: 185px;
+	padding-top: 28px;
+	display: none;
+}
+
+#sidebar ul {
+	margin-left: 17px;
+}
+
+#sidebar ul li {
+	font-family: 'Museo500', sans-serif;
+	font-weight: bold;
+	font-size: 1.167em;
+	line-height: 30px;
+	list-style: disc outside url(/assets/images/en-us/bestbuy/rgt_links_arrow.png);
+}
+
+#sidebar ul li a:hover {
+	text-decoration: underline;
+}
+
+#sidebar_contact {
+	padding: 9px 0;
+}
+
+#sidebar_contact .contact_title {
+	color: #000000;
+	font-family: 'Museo500',sans-serif;
+	font-size: 1.167em;
+	font-weight: bold;
+	padding: 5px 0 9px 0;
+}
+
+#footer {
+	float: left;
+	margin-top: 10px;
+	overflow: hidden;
+	position: relative;
+	width: 980px;
+}
+
+#footer .footer-lft,
+#footer .footer-rgt {
+	background-image: url(/assets/images/en-us/bestbuy/footer-top.png);
+	font-size: 0.083em;
+	height: 10px;
+} 
+
+#footer .footer-rgt {
+	float: right;
+	width: 95px;
+}
+
+#footer .footer-lft {
+	display: inline;
+	float: left;
+	margin-left: -95px;
+	width: 100%;
+}
+
+#footer .footer-ctr {
+	background: url(/assets/images/en-us/bestbuy/bg-footer.png) #004393;
+	clear: both;
+	min-height: 15px;
+	padding: 15px 0 0;
+}
+
+#top-line {
+	background: url(/assets/images/en-us/bestbuy/top-line.jpg) repeat-x center top;
+	min-width: 1000px;
+	position: absolute;
+	top: 0;
+	height: 8px;
+	width: 100%;
+	display: none;
+}
+
+#bottom-line {
+	background: url(/assets/images/en-us/bestbuy/footer.jpg) repeat-x center top #003E74;
+	min-width: 1000px;
+	height: 8px;
+	display: none;
+}
+	
+/*Dialog Messages*/
+
+.dialogMsg {
+	display: none;
+}
+
+/*Error notifications*/
+
+#content .order .input_error {
+	border: 1px solid #FF0000;
+}
+
+.error {
+	color: #FF0000;
+	padding: 0 0 10px 10px;
+}
+
+
+/*Order-specific CSS below*/
+
+.order_top {
+	height: 15px;
+	width: 760px;
+}
+
+.order_main {
+	width: 760px;
+	float: left;
+	padding-left: 35px;
+	padding-top: 30px;
+}
+
+.order {
+	padding-right: 10px;
+	padding-bottom: 50px;
+	overflow: hidden;
+}
+
+.order_progress {
+	float: left;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	display: none;
+}
+
+.order_progress ul {
+	display: inline;
+	float: left;
+	list-style-type: none;
+	width: 738px;
+}
+
+.order_progress ul li {
+	font-family: 'Museo500', sans-serif;
+	color: #666666;
+	float: left;
+	font-size: 1.083em;
+	line-height: 18px;
+	margin: 0 5px;
+	padding: 0 30px 10px 0;
+	text-align: center;
+}
+
+.order_progress ul li.current {
+	background: url(/assets/images/en-us/bestbuy/stepicon_active.png) no-repeat right center;
+	color: #50A130;
+	font-size: 1.66em;
+	font-weight: bold;
+}
+
+.order_progress ul li.lastitem {
+	background: none;
+}
+
+.order_step .step {
+	display: none;
+}
+
+.order_step .current {
+	display: block;
+	float: left;
+	width: 738px;
+}
+
+.order_step .step_header_wrapper {
+	width: inherit;
+	padding-left: 10px;
+	padding-bottom: 12px;
+	float: left;
+}
+
+.order_step .step_header {
+	color: #003F76;
+	font-family: 'Museo700',sans-serif;
+	float: left;
+	font-size: 1.5em;
+}
+
+.order_step .progress_button {
+	float: right;
+	margin-left: 10px;
+	padding-top: 5px;
+	display: none;
+}
+
+.progress_button a {
+	color: #FFFFFF;
+}
+
+.progress_button a:hover {
+	color: #D7EEFF;
+}
+
+.progress_button .button_lft,
+.progress_button .button_rgt {
+	height: 20px;
+	width: 10px;
+	float: left;
+	padding: 0;
+}
+
+.progress_button .button_lft {
+	background-image: url(/assets/images/en-us/bestbuy/btn_lft.png);
+}
+
+.progress_button .button_rgt {
+	background-image: url(/assets/images/en-us/bestbuy/btn_rgt.png);
+}
+
+.progress_button .button_ctr {
+	background-image: url(/assets/images/en-us/bestbuy/btn_mid.png);
+	height: 20px;
+	float: left;
+	line-height: 20px;
+	font-size: 0.9167em;
+	padding: 0 5px;
+	font-weight: bold;
+}
+
+.progress_button .button_lft.disabled {
+	background-image: url(/assets/images/en-us/bestbuy/btn_lft_disabled.png);
+}
+
+.progress_button .button_rgt.disabled {
+	background-image: url(/assets/images/en-us/bestbuy/btn_rgt_disabled.png);
+}
+
+.progress_button .button_ctr.disabled {
+	background-image: url(/assets/images/en-us/bestbuy/btn_mid_disabled.png);
+	color: #FFFFFF;
+}
+
+.progress_button .button_ctr a,
+.progress_button .button_ctr.disabled a:hover {
+	color: #FFFFFF;
+}
+
+#content .step .step_block {
+	float: left;
+	width: 738px;
+}
+
+
+.step .navlink {
+	float: right;
+	margin-left: 10px;
+	padding-top: 7px;
+}
+
+.step .navlink,
+.step .navlink a {
+	color: #A8A7A7;
+	font-size: 1.025em;
+}
+
+#content .step .heading {
+	height: 27px;
+	width: 738px;
+	float: left;
+	font-size: 1.083em;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.step .heading div {
+	padding-top: 5px;
+}
+
+.heading div:first-child {
+	padding-left: 10px;
+	float: left;
+}
+
+.cart .item {
+	width: 541px;
+	float: left;
+}
+
+.cart  .quantity {
+	float: left;
+	text-align: center;
+}
+
+.cart .price {
+	float: right;
+	text-align: right;
+	font-weight: bold;
+}
+
+.product .price {
+	font-size: 1.083em;
+	padding-right: 5px;
+	padding-top: 5px;
+}
+
+.step .heading .item {
+	padding-left: 15px;
+}
+
+.heading .price,
+.heading .edit {
+	padding-right: 10px;
+	text-align: right;
+}
+
+.product,
+.emptycart {
+	padding: 5px;
+	float: left;
+	width: 708px;
+}
+
+.emptycart {
+	font-size: 1.167em;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 43px;
+}
+
+.emptycart p {
+	padding-top: 10px;
+}
+
+.product .image {
+	float: left;
+}
+
+.product .details {
+	float: left;
+	padding: 5px 28px;
+}
+
+.product .details .name a {
+	font-size: 1.167em;
+	font-weight: bold;
+}
+
+.product .details .name a:hover {
+	color: black;
+}
+
+.product .details  {
+	font-size: 1.083em;
+	font-weight: bold;
+}
+
+.product .quantity input {
+	width: 30px;
+	text-align: center;
+}
+
+.product .quantity input.textfield {
+	color: #000000;
+	border: 1px solid #dbdfe6;
+	border-top: 1px solid #999999;
+	margin-top:20px;
+	margin-left: 1px;
+	height: 13px;
+	padding: 1px 0 1px 0;
+}
+
+.product .quantity  .update {
+	margin-top: 15px;
+	margin-left: 2px;
+}
+
+.product .quantity  .update a{
+	color: #0090CE;
+	text-decoration: none;
+	font-size: 1.1em;
+	color: #0090CE;
+}
+
+.product .quantity  .update a:hover {
+	text-decoration: underline;
+}
+
+.subtotal {
+	float: left;
+	margin-top: 43px;
+	padding-bottom: 25px;
+	width: 738px;
+}
+
+.subtotal_wording {
+	text-align: right;
+	float: left;
+	width: 619px;
+}
+
+.shipping_total .wording,
+.tax .wording,
+.order_total .wording {
+	text-align: right;
+	float: left;
+	width: 598px;
+}
+
+.subtotal_wording .title {
+	font-weight: bold;
+	font-size: 1.083em;
+}
+
+.subtotal_wording .disclaimer {
+	color: #000000;
+	font-size: 0.9167em;
+	
+}
+
+.subtotal_cost,
+.shipping_total .cost,
+.tax .cost,
+.order_total .cost  {
+	float: right;
+	padding-right: 10px;
+}
+
+#shipping  {
+	float: left;
+	padding-bottom: 25px;
+}
+
+#billing {
+	float: left;
+	padding-left: 2.083em;
+}
+#shipping h2,
+#billing h2,
+.shipping_info h2,
+.billing_info h2 {
+	color: #004A84;
+	font-family: 'Museo700',sans-serif;
+	font-size: 1.583em;
+	padding: 13px 10px 12px;
+}
+
+#copy_address {
+	padding: 0;
+	margin-left: 0.83em;
+	width: auto;
+}
+
+.inputline {
+	padding: 8px 10px;
+}
+
+.step label {
+	width: 132px;
+	float: left;
+	font-size: 1.083em;
+	padding: 0.416em 0;
+}
+
+#copytext {
+	font-size: 1.083em;
+}
+
+.step input {
+	color: #777777;
+	width: 200px;;
+	padding: 0.35em 0.83em 0.415em;
+	border: 1px solid;
+	border-color: #848484 #C1C1C1 #E1E1E1;
+}
+
+.step .areacode,
+.step .phone1 {
+	width: 22px;
+}
+
+.step .phone2 {
+	width: 90px;
+}
+
+.step .phone1,
+.step .phone2 {
+	margin-left: 8px;
+}
+
+#billing label {
+	width: 90px;
+	float: left;
+}
+
+.address .mi input {
+	width: 50px;
+}
+
+
+.step select {
+	margin: 0.35em 0 0.416em;
+}
+
+.address .example {
+	font-size: 1.083em;
+	padding: 5px 0 0 135px;
+}
+
+.policy {
+	padding: 10px;
+}
+
+#payment {
+	padding-bottom: 40px;
+}
+
+#payment .exp-year,
+#payment .exp-month {
+	width: 85px;
+}
+
+#payment .exp-year {
+	margin-left: 12px;
+}
+
+
+.total,
+.subtotal_cost {
+	font-weight: bold;
+	font-size: 1.083em;
+}
+
+#cvv_icon {
+	top: 4px;
+}
+
+.total {
+	padding-bottom: 10px;
+}
+
+.total {
+	margin-top: 0.83em;
+}
+
+.shipping_total,
+.tax,
+.order_total {
+	float: left;
+	padding: 7px 10px;
+	width: 728px;
+}
+
+.total .order_total .cost {
+	font-size: 1.24em;
+}
+
+.payment_info {
+	padding-top: 7px;
+	padding-bottom: 28px;
+}
+
+.payment_info .card_type,
+.payment_info .card_num {
+	width: 718px;
+	float: left;
+	padding: 7px 0 7px 10px;
+	font-size: 1.083em;
+}
+
+.payment_info .title {
+	float: left;
+	width: 135px;
+}
+
+.payment_info .desc {
+	width: 600px;	
+}
+
+#payment label {
+	width: 158px;
+}
+
+#address_info {
+	padding-bottom: 0.83em;
+}
+
+.shipping_info {
+	float: left;
+	width: 398px;
+}
+
+.billing_info {
+	float: left;
+}
+
+.shipping_info div {
+	float: left;
+}
+
+.shipping_info div,
+.billing_info div {
+	font-size: 1.083em;
+	padding: 8px 10px;
+}
+
+.shipping_info .multiline,
+.billing_info .multiline {
+	padding: 0;
+	float: left;
+	font-size: 1em;
+}
+
+#address_info label {
+	font-size: 1em;
+	padding: 0;
+}
+
+.shipping_info label {
+	width: 130px;
+}
+
+.billing_info label {
+	width: 90px;
+}
+
+.confirmation {
+	float: left;
+	padding: 8px 10px 20px;
+	font-size: 1.083em;
+	width: 718px;
+}
+
+.confirmation div {
+	padding: 5px 0;
+}
+
+.confirmation .bold {
+	font-weight: bold;
+}
+
+.confirmation .questions span {
+	padding-left: 1.75em;
+}
+
+#step_confirmation .details, 
+#step_confirmation .quantity, 
+#step_confirmation .price,
+#step_confirmation .total{
+	font-size: 1em;
+}
+
+#step_confirmation .details {
+	padding: 10px 34px;
+}
+
+.confirmation  .product{
+	padding-top: 10px;
+	padding-left: 0;
+	padding-right: 10px;
+	float: right;
+	wdith: 708px;
+}
+
+.confirmation  .product .item,
+.confirmation  .product .price,
+.confirmation  .product .quantity {
+	float: left;
+}
+
+.confirmation .item_right {
+	float: right;
+	padding: 10px 0;
+	font-weight: bold;
+}
+
+.confirmation .product .quantity,
+.confirmation .product .price  {
+	padding-right: 25px;
+}
+
+.confirmation  .product .total_price  {
+	float: right;
+}
+
+.confirmation  .product .price  {
+	padding-right: 25px;
+}
+
+.confirmation .details div {
+	padding: 0;
+}
+
+.confirmation .total {
+	padding-right: 10px;
+	float: right;
+	padding-top: 0;
+	margin: 0;
+}
+
+.confirmation .total div {
+	padding: 0;
+	margin: 0;
+}
+
+.confirmation .shipping_total .wording,
+.confirmation .tax .wording,
+.confirmation .order_total .wording {
+	text-align: right;
+	float: left;
+	width: 572px;
+}
+.confirmation .total .tax,
+.confirmation .total .order_total {
+	padding-top: 15px;
+}
+
+.confirmation .contact {
+	float: left;
+}
+
+.confirmation .order_step .progress_button {
+	padding-top: 11px;
+}
+
+.confirmation .progress_button .button_ctr {
+	font-size: 0.846em;
+}
+
+div.whiteOut {
+background-color: #FFFFFF;
+background-repeat:repeat;
+filter: alpha(opacity=70); /* IE */
+height: 100%;
+left: 0px;
+opacity: 0.7; /* Safari, Opera */
+-moz-opacity:0.70; /* FireFox */
+position: absolute;
+top: 0px;
+width: 105%;
+z-index: 1000;
+}
+
+div.ajax-loader {
+background: url(/assets/images/en-us/bestbuy/ajax-loader.gif) no-repeat 40% 45%;
+height: 16px;
+left: 40%;
+position: absolute;
+top: 35%;
+width: 16px;
+z-index: 1010;
+}
