@@ -1,0 +1,1497 @@
+
+/*   START FILE master.css >>> */
+
+@font-face {
+    font-family: 'Museo300';
+    src: url('font-face/museo300-regular-webfont.eot');
+    src: url('font-face/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo300-regular-webfont.woff') format('woff'),
+         url('font-face/museo300-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo300-regular-webfont.svg#Museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo700';
+    src: url('font-face/museo700-regular-webfont.eot');
+    src: url('font-face/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo700-regular-webfont.woff') format('woff'),
+         url('font-face/museo700-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo700-regular-webfont.svg#Museo700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo500';
+    src: url('font-face/museo500-regular-webfont.eot');
+    src: url('font-face/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo500-regular-webfont.woff') format('woff'),
+         url('font-face/museo500-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo500-regular-webfont.svg#Museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo900';
+    src: url('font-face/museo900-regular-webfont.eot');
+    src: url('font-face/museo900-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo900-regular-webfont.woff') format('woff'),
+         url('font-face/museo900-regular-webfont.ttf') format('truetype'),
+         url('font-face/museo900-regular-webfont.svg#Museo900') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FuturaStdBold';
+    src: url('font-face/futurastd-bold-webfont.eot');
+    src: url('font-face/futurastd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/futurastd-bold-webfont.woff') format('woff'),
+         url('font-face/futurastd-bold-webfont.ttf') format('truetype'),
+         url('font-face/futurastd-bold-webfont.svg#FuturaStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MuseoSans900Italic';
+    src: url('font-face/museosans-900italic-webfont.eot');
+    src: url('font-face/museosans-900italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museosans-900italic-webfont.woff') format('woff'),
+         url('font-face/museosans-900italic-webfont.ttf') format('truetype'),
+         url('font-face/museosans-900italic-webfont.svg#MuseoSans900Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Museo700Italic';
+    src: url('font-face/museo700-italic-webfont.eot');
+    src: url('font-face/museo700-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museo700-italic-webfont.woff') format('woff'),
+         url('font-face/museo700-italic-webfont.ttf') format('truetype'),
+         url('font-face/museo700-italic-webfont.svg#Museo700Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MuseoSans500Italic';
+    src: url('font-face/museosans_500_italic-webfont.eot');
+    src: url('font-face/museosans_500_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font-face/museosans_500_italic-webfont.woff') format('woff'),
+         url('font-face/museosans_500_italic-webfont.ttf') format('truetype'),
+         url('font-face/museosans_500_italic-webfont.svg#MuseoSans500Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h4 { font-family: 'Museo500', sans-serif; font-size: 1.167em; color: #000000; font-weight: bold;  }
+
+/*Page*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #2A89CA;
+	text-decoration: none;
+}
+
+input, textarea, select {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+
+html, body {
+	height: 100%;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	background: url(/assets/images/en-us/bestbuy/body.jpg) repeat-x center top #FFFFFF;
+	color: #666666;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 0.75em;
+	line-height: 1.2;
+}
+
+#bg {
+	background: url(/assets/images/en-us/bestbuy/bg.jpg) no-repeat center top;
+	min-height: 100%;
+	height: auto !important; /*Keeps copyright notice from overlapping page*/
+	height: 100%;
+	margin: 0 auto -1.1em;
+}
+
+#wrapper {
+	background: url(/assets/images/en-us/bestbuy/shell-bg.jpg) repeat-x center top #FFFFFF;
+	width: 83.333em;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#header {
+	height: 11.833em;
+}
+
+.logo {
+	float: left;
+	padding: 2.5em 2.083em 0 2.833em;
+}
+
+.logo a {
+	background: url(/assets/images/en-us/bestbuy/logo.png) no-repeat;
+	height: 112px;
+	width: 196px;
+	display: block;
+	text-indent: -333.333em;
+}
+
+#header .hdr_rgt {
+	float: right;
+}
+
+
+#content {
+	padding: 0 0 3.333em;
+	position: relative;
+}
+
+.breadcrumb {
+	margin: 1.5em 0 0 3.667em;
+}
+
+.breadcrumb a.home {
+	color: #004C86;
+}
+
+#sidebar {
+	position: absolute;
+	right: 0;
+	top: 3.333em;
+	width: 15.5em;
+}
+
+.sidebar_links {
+	float:left;
+	width:15.355em;
+}
+
+.sidebar_links ul {
+	list-style: none;
+}
+
+.sidebar_links ul li {
+	background: url(/assets/images/en-us/bestbuy/rgt_links_arrow.png) no-repeat left center;
+	font-family: 'Museo500', sans-serif;
+	font-weight: bold;
+	font-size: 1.167em;
+	padding: 0.7857em 0 0.5em 1.2857em;
+}
+
+.sidebar_links ul li a:hover {
+	text-decoration: underline;
+}
+
+.sidebar_contact {
+	float:left;
+	padding: 1em 0 0 0.0833em;
+}
+
+.sidebar_contact .contact_title {
+	color: #000000;
+	font-family: 'Museo500',sans-serif;
+	font-size: 1.167em;
+	font-weight: bold;
+	padding:0.415em 0.7em 0.66em 0;
+}
+
+#copyright {
+	color: #666;
+	font-size: .8em;
+	line-height: 1.4em;
+	text-align: left;	
+	margin-left: 0.25em;
+}
+
+div.whiteOut {
+	background-color: #FFFFFF;
+	background-repeat:repeat;
+	filter: alpha(opacity=70); /* IE */
+	height: 100%;
+	left: 0px;
+	opacity: 0.7; /* Safari, Opera */
+	-moz-opacity:0.70; /* FireFox */
+	position: absolute;
+	top: 0px;
+	width: 105%;
+	z-index: 1000;
+}
+
+div.ajax-loader {
+	background: url(/assets/images/en-us/bestbuy/ajax-loader.gif) no-repeat 40% 45%;
+	height: 16px;
+	left: 40%;
+	position: absolute;
+	top: 35%;
+	width: 16px;
+	z-index: 1010;
+}
+
+.hidden {
+	display: none;
+}
+
+.clearleft {
+	clear: left;
+}
+
+.relative {
+	position: relative;
+}
+
+.fake_anchor {
+	color: #2A89CA;
+	cursor: pointer;
+}
+
+.fake_anchor:hover {
+	text-decoration: underline;
+}
+
+/*Dialog Messages*/
+
+.dialogMsg {
+	display: none;
+}
+
+/*Error notifications*/
+
+#content .order .input_error {
+	border: 1px solid #FF0000;
+}
+
+select.input_error {
+	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=0,color=#FF0000) 
+		progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=0,color=#FF0000) 
+		progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=-1,color=#FF0000) 
+		progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1,color=#FF0000);
+}
+
+/* <<< END FILE master.css */
+
+/*   START FILE order.css >>> */
+
+.order_main {
+	width: 63.333em;
+	float: left;
+	padding-left: 2.9167em;
+	padding-top: 2.5em;
+}
+
+.order {
+	padding-right: 0.833em;
+	padding-bottom: 4.1667em;
+	overflow: hidden;
+}
+
+.order_progress {
+	background: url(/assets/images/en-us/bestbuy/register_line.gif) no-repeat center bottom;
+	float: left;
+	margin-bottom: 1.25em;
+	padding-bottom: 0.833em;
+}
+
+.order_progress ul {
+	display: inline;
+	float: left;
+	list-style-type: none;
+	width: 61.5em;
+}
+
+.order_progress ul li {
+	font-family: 'Museo500', sans-serif;
+	background: url(/assets/images/en-us/bestbuy/stepicon.png) no-repeat right center;
+	color: #666666;
+	float: left;
+	font-size: 1.083em;
+	line-height: 1.385em;
+	margin: 0 0.385em;
+	padding: 0 2.308em 0.769em 0;
+	text-align: center;
+}
+
+.order_progress ul li.current {
+	background: url(/assets/images/en-us/bestbuy/stepicon_active.png) no-repeat right center;
+	color: #50A130;
+	font-size: 1.66em;
+	font-weight: bold;
+	line-height: 0.9em;
+	margin: 0 0.25em;
+	padding: 0 1.5em 0.5em 0;
+}
+
+.order_progress ul li.lastitem {
+	background: none;
+}
+
+.order_step .step {
+	display: none;
+}
+
+.order_step .current {
+	display: block;
+	float: left;
+	width: 61.5em;
+}
+
+.order_step .step_header_wrapper {
+	width: inherit;
+	padding-bottom: 1em;
+	float: left;
+}
+
+.order_step .step_header {
+	color: #003F76;
+	font-family: 'Museo700',sans-serif;
+	float: left;
+	font-size: 2em;
+}
+
+.order_step .progress_button {
+	float: right;
+	margin-left: 0.833em;
+	padding-top: 0.4167em;
+}
+
+.progress_button a {
+	color: #FFFFFF;
+}
+
+.progress_button a:hover {
+	color: #D7EEFF;
+}
+
+.progress_button .button_lft,
+.progress_button .button_rgt {
+	height: 1.6667em;
+	width: 0.833em;
+	float: left;
+	padding: 0;
+}
+
+.progress_button .button_lft {
+	background-image: url(/assets/images/en-us/bestbuy/btn_lft.png);
+}
+
+.progress_button .button_rgt {
+	background-image: url(/assets/images/en-us/bestbuy/btn_rgt.png);
+}
+
+.progress_button .button_ctr {
+	background-image: url(/assets/images/en-us/bestbuy/btn_mid.png);
+	height: 1.818em;
+	float: left;
+	line-height: 1.818em;
+	font-size: 0.9167em;
+	padding: 0 0.4545em;
+	font-weight: bold;
+}
+
+.button_lft,
+.button_rgt,
+.button_ctr {
+	cursor: pointer;
+}
+
+.progress_button .button_lft.disabled,
+.progress_button .button_rgt.disabled,
+.progress_button .button_ctr.disabled {
+	cursor: default;
+}
+
+.progress_button .button_lft.disabled {
+	background-image: url(/assets/images/en-us/bestbuy/btn_lft_disabled.png);
+}
+
+.progress_button .button_rgt.disabled {
+	background-image: url(/assets/images/en-us/bestbuy/btn_rgt_disabled.png);
+}
+
+.progress_button .button_ctr.disabled {
+	background-image: url(/assets/images/en-us/bestbuy/btn_mid_disabled.png);
+	color: #FFFFFF;
+}
+
+.progress_button .button_ctr a,
+.progress_button .button_ctr.disabled a:hover {
+	color: #FFFFFF;
+}
+
+#content .step .step_block {
+	float: left;
+	width: 738px;
+}
+
+
+.step .navlink {
+	float: right;
+	margin-left: 10px;
+	padding-top: 7px;
+}
+
+.step .navlink,
+.step .navlink a {
+	color: #A8A7A7;
+	font-size: 1.025em;
+}
+
+#content .step .heading {
+	background: url(/assets/images/en-us/bestbuy/filter_back_top_dark.png) no-repeat;
+	height: 27px;
+	width: 738px;
+	float: left;
+	color: #FFFFFF;
+	font-size: 1.083em;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.step .heading div {
+	padding-top: 5px;
+}
+
+.heading div:first-child {
+	padding-left: 10px;
+	float: left;
+}
+
+/* <<< END FILE order.css */
+
+/*   START FILE cart.css >>> */
+
+.cart .item {
+	width: 421px;
+	float: left;
+}
+
+.cart .price {
+	width: 110px;
+	float: left;
+	text-align: left;
+}
+
+.cart .quantity {
+	float: left;
+	text-align: center;
+}
+
+.cart .heading .quantity {
+	padding-left: 10px;
+}
+
+.cart .total_price {
+	float: right;
+	text-align: right;
+	font-weight: bold;
+}
+
+.product .total_price
+.product .price {
+	font-size: 1.083em;
+	padding-right: 5px;
+	padding-top: 5px;
+}
+
+.cart .item {
+	padding-left: 10px;
+}
+
+.heading .total_price,
+.heading .edit {
+	padding-right: 10px;
+	text-align: right;
+}
+
+.product,
+.emptycart {
+	padding-top: 10px;
+	float: left;
+	width: 728px;
+}
+
+.emptycart {
+	font-size: 1.167em;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 43px;
+}
+
+.emptycart p {
+	padding-top: 10px;
+}
+
+.product .image {
+	float: left;
+}
+
+.product .details {
+	float: left;
+	padding: 5px 28px;
+}
+
+.product .details .name a {
+	font-size: 1.167em;
+	font-weight: bold;
+}
+
+.product .details .name a:hover {
+	color: black;
+}
+
+.product .details  {
+	font-size: 1.083em;
+	font-weight: bold;
+}
+
+.product .quantity input {
+	width: 30px;
+	text-align: center;
+}
+
+.product .quantity input.textfield {
+	color: #000000;
+	border: 1px solid #dbdfe6;
+	border-top: 1px solid #999999;
+	height: 13px;
+	padding: 1px 0 1px 0;
+}
+
+.product .quantity  .update {
+	margin: 0.5em 0 0 0.1667em;
+	font-size: 1.08333em;
+}
+
+.update {
+	position: relative;
+}
+
+.product .quantity  .update a{
+	color: #0090CE;
+	text-decoration: none;
+	font-size: 1.1em;
+	color: #0090CE;
+}
+
+.product .quantity  .update a:hover {
+	text-decoration: underline;
+}
+
+.subtotal {
+	float: left;
+	margin-top: 43px;
+	padding-bottom: 25px;
+	width: 738px;
+}
+
+.subtotal_wording {
+	text-align: right;
+	float: left;
+	width: 619px;
+}
+
+.shipping_total .wording,
+.tax .wording,
+.order_total .wording {
+	text-align: right;
+	float: left;
+	width: 598px;
+}
+
+.subtotal_wording .title {
+	font-weight: bold;
+	font-size: 1.083em;
+}
+
+.subtotal_wording .disclaimer {
+	color: #000000;
+	font-size: 0.9167em;
+	
+}
+
+.subtotal_cost,
+.shipping_total .cost,
+.tax .cost,
+.order_total .cost  {
+	float: right;
+	padding-right: 10px;
+}
+
+/* <<< END FILE cart.css */
+
+/*   START FILE shipping.css >>> */
+
+#shipping_error_notice {
+	color: #FF0000;
+	font-size: 1.0833em;
+	padding: 0 0 0.8462em 0.8462em;
+}
+
+#shipping  {
+	float: left;
+	padding-bottom: 25px;
+}
+
+#billing {
+	float: left;
+	padding-left: 2.083em;
+}
+#shipping h2,
+#billing h2,
+.shipping_info h2,
+.billing_info h2 {
+	color: #004A84;
+	font-family: 'Museo700',sans-serif;
+	font-size: 1.583em;
+	padding: 13px 10px 12px;
+}
+
+#copy_address {
+	padding: 0;
+	margin-left: 0.83em;
+	width: auto;
+}
+
+.inputline {
+	padding: 8px 10px;
+}
+
+.step label {
+	width: 132px;
+	float: left;
+	font-size: 1.083em;
+	padding: 0.416em 0;
+}
+
+#billing #copytext {
+	float: none;
+	width: auto;
+}
+
+.step input,
+.step select {
+	color: #777777;
+	border: 1px solid;
+	border-color: #848484 #C1C1C1 #E1E1E1;
+}
+
+.step input {
+	width: 200px;
+	padding: 0.35em 0.83em 0.415em;
+}
+
+.step select {
+	margin: 0.35em 0 0.416em;
+	width: 221px;
+}
+
+
+.step .areacode,
+.step .phone1 {
+	width: 22px;
+}
+
+.step .phone2 {
+	width: 90px;
+}
+
+.step .phone1,
+.step .phone2 {
+	margin-left: 8px;
+}
+
+#billing label {
+	width: 90px;
+	float: left;
+}
+
+.address .mi input {
+	width: 50px;
+}
+
+.address .example {
+	font-size: 1.083em;
+	padding: 5px 0 0 135px;
+}
+
+.policy {
+	font-size: 1.083em;
+	padding: 0.7692em;
+}
+
+.policy a:hover {
+	text-decoration: underline;
+}
+
+.international_notice {
+	padding: 0.41667em 0 0 9.75em;
+}
+
+.international_notice a:hover {
+	text-decoration: underline;
+}
+
+/* <<< END FILE shipping.css */
+
+/*   START FILE payment.css >>> */
+
+#payment {
+	padding-bottom: 40px;
+}
+
+#payment .exp-year,
+#payment .exp-month {
+	width: 85px;
+}
+
+#payment .exp-year {
+	margin-left: 12px;
+}
+
+
+.total,
+.subtotal_cost {
+	font-weight: bold;
+	font-size: 1.083em;
+}
+
+#cvv_icon {
+	top: 4px;
+	cursor: pointer;
+}
+
+/* <<< END FILE payment.css */
+
+/*   START FILE review.css >>> */
+
+.total {
+	padding-top: 0.833em;
+	padding-bottom: 0.25em;
+}
+
+.shipping_total,
+.tax,
+.order_total {
+	float: left;
+	padding: 7px 10px;
+	width: 728px;
+}
+
+.total .order_total .cost {
+	font-size: 1.24em;
+}
+
+#address_info {
+	padding-bottom: 1.16em;
+}
+
+#address_info .address {
+	float: left;
+}
+
+.shipping_info {
+	float: left;
+	width: 398px;
+}
+
+.billing_info {
+	float: left;
+}
+
+
+.shipping_info div,
+.billing_info div {
+	font-size: 1.083em;
+	padding: 8px 10px;
+}
+
+.shipping_info .multiline,
+.billing_info .multiline {
+	padding: 0;
+	float: left;
+	font-size: 1em;
+}
+
+.multiline div {
+	clear: both;
+	float: left;
+	font-size: 1em;
+	padding: 0;
+}
+
+#address_info label {
+	font-size: 1em;
+	padding: 0;
+}
+
+.shipping_info label {
+	width: 130px;
+}
+
+.billing_info label {
+	width: 90px;
+}
+
+.payment_info {
+	padding-top: 7px;
+	padding-bottom: 28px;
+}
+
+.payment_info .card_type,
+.payment_info .card_num {
+	width: 718px;
+	float: left;
+	padding: 7px 0 7px 10px;
+	font-size: 1.083em;
+}
+
+.payment_info .title {
+	float: left;
+	width: 135px;
+}
+
+.payment_info .desc {
+	float: left;	
+}
+
+#payment label {
+	width: 158px;
+}
+
+#step_review .edit_button:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.cancel-order {
+	margin-left: 1em;
+	margin-right: 1em;
+	word-spacing: -0.2em;
+}
+
+/* <<< END FILE review.css */
+
+/*   START FILE confirmation.css >>> */
+
+.confirmation {
+	float: left;
+	padding: 8px 10px 20px;
+	font-size: 1.083em;
+	width: 718px;
+}
+
+.confirmation div {
+	padding: 5px 0;
+}
+
+.confirmation .bold {
+	font-weight: bold;
+}
+
+.confirmation .questions span {
+	padding-left: 1.75em;
+}
+
+#step_confirmation .details, 
+#step_confirmation .quantity, 
+#step_confirmation .total_price,
+#step_confirmation .total{
+	font-size: 1em;
+}
+
+#step_confirmation .details {
+	padding: 10px 34px;
+}
+
+.confirmation  .product{
+	padding: 10px 10px 0;
+	float: right;
+	width: 708px;
+}
+
+.confirmation  .product .item,
+.confirmation  .product .price,
+.confirmation  .product .quantity {
+	float: left;
+}
+
+.confirmation .item_right {
+	float: right;
+	padding: 10px 0;
+	font-weight: bold;
+}
+
+.confirmation .product .quantity,
+.confirmation .product .price  {
+	padding-right: 25px;
+}
+
+.confirmation  .product .total_price  {
+	float: right;
+}
+
+.confirmation  .product .price  {
+	padding-right: 25px;
+}
+
+.confirmation .details div {
+	padding: 0;
+}
+
+.confirmation .total {
+	padding-right: 10px;
+	float: right;
+	padding-top: 0;
+	margin: 0;
+}
+
+.confirmation .total div {
+	padding: 0;
+	margin: 0;
+}
+
+.confirmation .shipping_total .wording,
+.confirmation .tax .wording,
+.confirmation .order_total .wording {
+	text-align: right;
+	float: left;
+	width: 572px;
+}
+.confirmation .total .tax,
+.confirmation .total .order_total {
+	padding-top: 15px;
+}
+
+.confirmation .contact {
+	float: left;
+}
+
+.confirmation .order_step .progress_button {
+	padding-top: 11px;
+}
+
+.confirmation .progress_button .button_ctr {
+	font-size: 0.846em;
+}
+
+.print .button_lft,
+.print .button_rgt {
+    font-size: 0.9231em;
+}
+
+/* <<< END FILE confirmation.css */
+
+/*   START FILE modal/modal.css >>> */
+
+/**
+ * @file
+ * Define general styles for modals
+ *
+ * @author Daniel Chen <dchen@systemsinmotion.com>
+ */
+.modal-mesh{
+	z-index: 4000;
+	min-height: 100%;
+	min-width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url('/assets/images/en-us/bestbuy/modal/overlay.png');
+	opacity: 0.1;
+	/* for IE8 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	/* for IE5-7 */
+	filter: alpha(opacity=10);
+}
+.modal-wrapper{
+	z-index: 4001;
+	position: fixed;
+	top: 0;
+}
+/**
+ * Define styles for modal's rounded corner
+ */
+.modal-border-wrap {
+	width: 100%;
+	height: 21px;
+	float: left;
+	clear: both;
+}
+.modal-border {
+	background-image: url('/assets/images/en-us/bestbuy/modal/sprite.png');
+	height: 21px;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+.modal-border.middle {
+	background-image: url('/assets/images/en-us/bestbuy/modal/border.png');
+}
+.modal-border.top.middle {
+}
+.modal-border.bottom.middle {
+	background-position: 0 -29px;
+}
+.modal-border.top {
+}
+.modal-border.top.left {
+	width: 21px;
+	height: 21px;
+	background-position: -100px 0px;
+}
+.modal-border.top.right {
+	width: 21px;
+	height: 21px;
+	background-position: -129px 0px;
+}
+.modal-border.bottom {
+}
+.modal-border.bottom.right {
+	width: 21px;
+	height: 21px;
+	background-position: -129px -29px;
+}
+.modal-border.bottom.left {
+	width: 21px;
+	height: 21px;
+	background-position: -100px -29px;
+}
+.modal-border-side {
+	width: 21px;
+	float: left;
+	background-image: url('/assets/images/en-us/bestbuy/modal/sprite.png');
+}
+.modal-border-side.left {
+}
+.modal-border-side.right {
+	background-position: 100%;
+}
+.modal {
+	z-index: 9999;
+	margin: 0;
+	width: 500px;
+	position: absolute;
+}
+.modal h2 {
+	font-size: 1.125em;
+	text-align: center;
+}
+.modal h3 {
+	font-size: 1em;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.modal-close {
+	display: block;
+	height: 25px;
+	width: 25px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	background: url('/assets/images/en-us/bestbuy/modal/sprite.png') -25px 0 no-repeat;
+}
+.modal-close:hover {
+	background-position: -25px -25px;
+}
+.modal-inner {
+	margin: 0;
+	position: relative;
+	float: left;
+	background: white;
+	font-family: Arial, Helvetica, Sans-Serif;
+}
+/**
+ * Define styles for modal buttons
+ */
+.modal .button {
+	height: 20px;
+	margin-right: 10px;
+	line-height: 20px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 0.9em;
+	color: white;
+}
+.modal .button.disabled {
+	pointer-events: none;
+	cursor: default;
+}
+.error_message.modal .button:hover {
+	color: #D7EEFF;
+	text-decoration: none;
+}
+
+.modal .button_lft {
+	background: url('/assets/images/en-us/bestbuy/btn_lft.png');
+	width: 10px;
+	height: 20px;
+	float: left;
+}
+.modal .button_lft.disabled {
+	background: url('/assets/images/en-us/bestbuy/btn_lft_disabled.png');
+}
+
+.modal .button_rgt {
+	background: url('/assets/images/en-us/bestbuy/btn_rgt.png');
+	width: 10px;
+	height: 20px;
+	float: left;
+}
+.modal .button_rgt.disabled {
+	background: url('/assets/images/en-us/bestbuy/btn_rgt_disabled.png');
+}
+
+.modal .button_ctr {
+	background-image: url('/assets/images/en-us/bestbuy/btn_mid.png');
+	height: 20px;
+	float: left;
+	padding: 0 5px;
+	font-weight: bold;
+}
+.modal .button_ctr.disabled {
+	background-image: url('/assets/images/en-us/bestbuy/btn_mid_disabled.png');
+}
+
+
+/* <<< END FILE modal/modal.css */
+
+/*   START FILE modal/confirmation-modal.css >>> */
+
+/**
+ * @file
+ * Define styles for address confirmation modal
+ */
+.address_confirm.modal {
+	width: 570px;
+	line-height: 14px;
+}
+.address_confirm.modal .modal-inner,
+.address_confirm.modal .modal-border.top.middle,
+.address_confirm.modal .modal-border.bottom.middle {
+	width: 528px;
+}
+.address_confirm.modal .modal-inner,
+.address_confirm .modal-border-side.left,
+.address_confirm .modal-border-side.right {
+	height: 463px;
+}
+.address_confirm.modal h2 {
+	font-family: 'Museo700',sans-serif;
+	padding: 15px;
+	font-size: 1.8em;
+	text-align: left;
+	color: #003F76;
+}
+.address_confirm.modal p {
+	color: #666;
+	line-height: 1.2;
+	display: block;
+	width: 500px;
+	margin: 0 auto 10px;
+}
+.address_confirm.modal h3 {
+	text-align: left;
+	font-size: 1em;
+	display: block;
+	width: 480px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #CDE0EF;
+	color: #003F76;
+}
+.address_confirm.modal .original-address,
+.address_confirm.modal .standardized-address{
+	float: left;
+	width: 250px;
+}
+.address_confirm.modal .row {
+	clear: both;
+	float: left;
+	color: #666;
+	margin: 10px 0 20px 20px;
+}
+.address_confirm.modal input[type=checkbox] {
+	margin-right: -23px;
+	float: left;
+	display: block;
+	height: 23px;
+	line-height: 23px;
+}
+.address_confirm.modal label {
+	display: block;
+	float: left;
+	width: 175px;
+	margin-left: 23px;
+	height: 23px;
+	line-height: 23px;
+}
+.address_confirm.modal .confirm-shipping,
+.address_confirm.modal .confirm-billing {
+	width: 500px;
+	margin-left: 10px;
+	float: left;
+}
+.address_confirm.modal .confirm-billing {
+	border-bottom: gray 1px solid;
+}
+.address_confirm.modal dl {
+	padding: 5px 10px;
+	margin-left: 20px;
+	float: left;
+}
+.address_confirm.modal dt {
+	color: black;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+.address_confirm.modal dd {
+	color: #666;
+}
+.address_confirm.modal .actions {
+	position: absolute;
+	bottom: 40px;
+	right: 20px;
+}
+.address_confirm.modal .button {
+	margin-right: 10px;
+	float: left;
+}
+
+
+/* <<< END FILE modal/confirmation-modal.css */
+
+/*   START FILE modal/error-modal.css >>> */
+
+/**
+ * @file
+ * Define styles for error modals
+ */
+.error_message.modal {
+	width: 570px;
+	line-height: 14px;
+}
+.error_message.modal .modal-inner,
+.error_message.modal .modal-border.top.middle,
+.error_message.modal .modal-border.bottom.middle {
+	width: 528px;
+}
+.error_message.modal .modal-inner,
+.error_message .modal-border-side.left,
+.error_message .modal-border-side.right {
+	height: 180px;
+}
+.error_message.modal .actions {
+	position: absolute;
+	bottom: 40px;
+	right: 20px;
+}
+.error_message.modal p {
+	color: #666;
+	margin: 40px auto;
+	text-align: center;
+}
+.error_message.modal .button.ok {
+	margin: 0 auto;
+	display: block;
+	width: 55px;
+	text-align: center;
+}
+
+
+/* <<< END FILE modal/error-modal.css */
+
+/*   START FILE modal/submission-error-modal.css >>> */
+
+/**
+ * @file
+ * Define styles for submission-error modal
+ */
+.error_content_skeleton {
+	display: none;
+}
+.submission-error.modal {
+	width: 570px;
+	line-height: 14px;
+}
+.submission-error.modal h2 {
+	margin-bottom: 10px;
+}
+.submission-error.modal .modal-inner,
+.submission-error.modal .modal-border.top.middle,
+.submission-error.modal .modal-border.bottom.middle {
+	width: 528px;
+}
+.submission-error.modal .modal-inner,
+.submission-error .modal-border-side.left,
+.submission-error .modal-border-side.right {
+	height: 280px;
+}
+.submission-error.modal .actions {
+	width: 130px;
+	margin: 0 auto;
+}
+.submission-error .error_content {
+	margin-left: 160px;
+}
+.submission-error.modal p {
+	color: #666;
+	margin: 10px auto;
+	text-align: center;
+}
+.submission-error.modal .button {
+	float: left;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+.submission-error.modal .button .button_ctr {
+	width: 30px;
+}
+
+
+/* <<< END FILE modal/submission-error-modal.css */
+
+/*   START FILE modal/cancel-modal.css >>> */
+
+/**
+ * @file
+ * Define styles for cancel modal
+ */
+.cancel.modal {
+	width: 570px;
+	line-height: 14px;
+}
+.cancel.modal .modal-inner,
+.cancel.modal .modal-border.top.middle,
+.cancel.modal .modal-border.bottom.middle {
+	width: 528px;
+}
+.cancel.modal .modal-inner,
+.cancel .modal-border-side.left,
+.cancel .modal-border-side.right {
+	height: 180px;
+}
+.cancel.modal .actions {
+	width: 130px;
+	margin: 0 auto;
+}
+.cancel.modal p {
+	color: #666;
+	margin: 40px auto;
+	text-align: center;
+}
+.cancel.modal .button {
+	float: left;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+.cancel.modal .button .button_ctr {
+	width: 30px;
+}
+
+
+/* <<< END FILE modal/cancel-modal.css */
+
+/*   START FILE modal/cvv_help.css >>> */
+
+/**
+ * @file
+ * Define styles for CVV Help Modal
+ */
+.cvv_help.modal {
+	width: 555px;
+	line-height: 14px;
+}
+.cvv_help.modal .modal-inner,
+.cvv_help.modal .modal-border.top.middle,
+.cvv_help.modal .modal-border.bottom.middle {
+	width: 513px;
+}
+.cvv_help.modal .modal-inner,
+.cvv_help .modal-border-side.left,
+.cvv_help .modal-border-side.right {
+	height: 450px;
+}
+.cvv_help.modal .modal-inner {
+	width: 463px;
+	height: 400px;
+	padding: 25px;	
+}
+
+.cvv_help.modal h2 {
+	font-size: 1.7em;
+	text-align: left;
+	color: #60bde8;
+	margin-bottom: 24px;
+	
+}
+.cvv_help.modal h3 {
+	text-align: left;
+	font-size: 1.25em;
+	color: #60bde8;
+	margin-bottom: 16px;
+}
+.cvv_help p {
+	text-align: justify;
+	padding-right: 12px; 
+	letter-spacing: 0.07em;
+	margin-bottom: 16px;
+	line-height: 18px;
+}
+
+.cvv_help.modal .cvv_card.left {
+	float: left;
+}
+.cvv_help.modal .cvv_card.right {
+	float: right;
+	margin-right: 28px;
+}
+
+.cvv_help.modal .cvv_card {
+	text-align: center;
+	font-weight: bold;
+}
+.cvv_help.modal .cvv_card img {
+	width: 136px;
+	height: 94px;
+	margin-top: 3px;
+}
+.cvv_help.modal .cvv_card .ccname {
+	font-weight: bold;
+	color: #60bde8;
+	font-size: 1.3em;
+}
+.cvv_help.modal .cvv_card .caption {
+	font-weight: bold;
+	font-style: italic;
+	color: #60bde8;
+}
+
+/* <<< END FILE modal/cvv_help.css */
