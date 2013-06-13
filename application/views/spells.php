@@ -11,15 +11,15 @@
 	    <?=form_close()?>
 	    
 	    <?=$this->load->view('options', array(
-	    	'option'=>'sources', 'option_name'=>'Source Texts', 'option_set'=>$sources
+	    	'option'=>'sources', 'can_select_all'=>TRUE, 'option_name'=>'Source Texts', 'option_set'=>$sources
 	    ))?>
 	    
 	    <?=$this->load->view('options', array(
-	    	'option'=>'columns', 'option_name'=>'Columns', 'option_set'=>$columns
+	    	'option'=>'columns', 'can_select_all'=>FALSE, 'option_name'=>'Columns', 'option_set'=>$columns
 	    ))?> 
 	    
 	    <?=$this->load->view('options', array(
-	    	'option'=>'attributes', 'option_name'=>'Spell Attributes', 'option_set'=>$attribs
+	    	'option'=>'attributes', 'can_select_all'=>FALSE, 'option_name'=>'Spell Attributes', 'option_set'=>$attribs
 	    ))?>  
 	    
 	</div>
