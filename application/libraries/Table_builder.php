@@ -9,7 +9,7 @@ class Table_builder {
 		$thtml = $tbl->open();
 		
 		if (!empty($this->headers)) {
-			$thtml
+			$thtml;
 		}
 		
 		
