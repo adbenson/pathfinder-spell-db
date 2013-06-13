@@ -20,6 +20,9 @@
 		    	
     				<?=form_submit('set_columns', "Set")?>
     				<?=form_reset('reset_columns', "Reset")?>
+    				<!-- TODO remove these buttons from Columns and Spell Attributes option panes -->
+    				<?=form_button('select_all', "Select All")?>
+    				<?=form_button('unselect_all', "Unselect All")?>
     				
     			</div>
     		</div>
