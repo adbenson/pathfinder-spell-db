@@ -64,7 +64,7 @@ class Spells extends CI_Model {
 		return $levels;
 	}
 	
-	public function get_spells($class_id, $level, $sources, $columns) {
+	public function get_spells($class_id, $level, $sources, $columns, $attribs) {
 		if (empty($columns)) {
 			$columns = $this->get_default_columns();
 		}
@@ -97,6 +97,12 @@ class Spells extends CI_Model {
 		if ($sources != 'all' && !empty($sources)) {
 			$where = implode("' OR spells.source = '", $sources);
 			$this->db->where("(spells.source = '".$where."')");
+		}
+		
+		if ( !empty($attribs)) {
+			foreach ($attribs as $attrib) {
+				$this->db->where('spells.'.$attrib, 1);
+			}
 		}
 		
 		$this->db->order_by('spells.name', 'ASC');

@@ -77,6 +77,8 @@ class Spell_db extends CI_Controller {
 		$sources = $this->spells->validate_sources($this->session->userdata('sources'));
 
 		$columns = $this->spells->validate_columns($this->session->userdata('columns'));
+		
+		$attribs = $this->spells->validate_columns($this->session->userdata('attribs'));
 
 		$headings = $this->spells->get_column_headings($columns);
 		
@@ -89,7 +91,7 @@ class Spell_db extends CI_Controller {
 			array_unshift($headings, 'Level');
 		}
 		
-		$spells = $this->spells->get_spells($class_id, $level, $sources, $columns);
+		$spells = $this->spells->get_spells($class_id, $level, $sources, $columns, $attribs);
 		
 		$data = array(
 			'spells' => $spells,
@@ -115,6 +117,14 @@ class Spell_db extends CI_Controller {
 		}
 		
 		$this->session->set_userdata('columns', $columns);
+		
+		$this->get_spells();
+	}
+	
+	public function set_attributes() {
+		$attribs = $this->spells->validate_columns($this->input->post(null, true));
+		
+		$this->session->set_userdata('attribs', $attribs);
 		
 		$this->get_spells();
 	}
