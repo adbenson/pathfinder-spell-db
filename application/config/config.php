@@ -16,7 +16,7 @@ $config['title'] = 'Pathfinder Spell DB';
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://spell_db.local/';
+$config['base_url']	= 'http://localhost/';
 
 /*
 |--------------------------------------------------------------------------
