@@ -18,11 +18,23 @@ $(document).ready(function() {
 	$('fieldset legend').click($(this).toggle_fieldset);
 	
 	$('form').submit(handle_submit);
+	$('button[name=select_all]').click(select_all);
+	$('button[name=unselect_all]').click(unselect_all);
 	
 	$('fieldset.closed .content').hide();
 	
 	load_spells();
 });
+
+function select_all() {
+	var checkboxes = $(this).closest('fieldset').find('input[type="checkbox"]');
+	checkboxes.prop('checked', true);
+}
+
+function unselect_all() {
+	var checkboxes = $(this).closest('fieldset').find('input[type="checkbox"]');
+	checkboxes.prop('checked', false);
+}
 
 function handle_desc_click() {
 	var desc = $(this);

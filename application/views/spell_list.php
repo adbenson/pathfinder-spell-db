@@ -14,7 +14,11 @@
 			</th>
 		</tr>
 		<tr>
-			<td class="header_border" colspan="<?=count($spells[0])?>">
+			<?php if ( !empty($spells)):?>
+				<td class="header_border" colspan="<?=count($spells[0])?>">
+			<?php else:?>
+				<td class="header_border" colspan="100">
+			<?php endif;?>
 		</tr>
 	</thead>
 	<tbody>
