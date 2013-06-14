@@ -21,8 +21,8 @@
     				<?=form_submit('set_columns', "Set")?>
     				<?=form_reset('reset_columns', "Reset")?>
     				<?php if ($can_select_all):?>
-    				<?=form_button('select_all', "Select All")?>
-    				<?=form_button('unselect_all', "Unselect All")?>
+    					<?=form_button('select_all', "Select All")?>
+    					<?=form_button('unselect_all', "Unselect All")?>
     				<?php endif;?>
     				
     			</div>
